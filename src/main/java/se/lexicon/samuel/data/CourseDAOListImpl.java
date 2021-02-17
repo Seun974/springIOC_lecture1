@@ -39,7 +39,7 @@ public class CourseDAOListImpl implements CourseDAO{
         courses.remove(course);
     }
 
-    //this clears the program and sorts of empties everythin
+    //this clears the program and sorts of empties everything
     @Override
     public void clear() {
         courses.clear();
