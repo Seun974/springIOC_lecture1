@@ -12,11 +12,18 @@ import java.util.UUID;
 
 public class StudentServiceImpl implements StudentService{
 
-    //adding dependency
+    //adding dependency and creating setters
     //points to studentDAO too
     private StudentDAO studentDAO;
     private StudentDTOConverter converter;
 
+    public void setStudentDAO(StudentDAO studentDAO) {
+        this.studentDAO = studentDAO;
+    }
+
+    public void setConverter(StudentDTOConverter converter) {
+        this.converter = converter;
+    }
 
     @Override
     public StudentDTO create(String firstname, String lastname, LocalDate birthDate, String email) {
