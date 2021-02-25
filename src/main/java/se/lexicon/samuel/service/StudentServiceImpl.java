@@ -18,6 +18,11 @@ public class StudentServiceImpl implements StudentService{
     private StudentDTOConverter converter;
 
 
+    public StudentServiceImpl(StudentDAO studentDAO, StudentDTOConverter converter) {
+        this.studentDAO = studentDAO;
+        this.converter = converter;
+    }
+
     @Override
     public StudentDTO create(String firstname, String lastname, LocalDate birthDate, String email) {
         Student student = new Student(
