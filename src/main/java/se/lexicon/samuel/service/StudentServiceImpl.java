@@ -1,5 +1,7 @@
 package se.lexicon.samuel.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import se.lexicon.samuel.data.StudentDAO;
 import se.lexicon.samuel.dto.StudentDTO;
 import se.lexicon.samuel.model.Student;
@@ -10,11 +12,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Component
 public class StudentServiceImpl implements StudentService{
 
     //adding dependency
     //points to studentDAO too
+    @Autowired
     private StudentDAO studentDAO;
+    @Autowired
     private StudentDTOConverter converter;
 
 
