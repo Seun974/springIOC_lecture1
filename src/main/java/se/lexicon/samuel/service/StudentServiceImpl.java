@@ -1,5 +1,7 @@
 package se.lexicon.samuel.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import se.lexicon.samuel.data.StudentDAO;
 import se.lexicon.samuel.dto.StudentDTO;
 import se.lexicon.samuel.model.Student;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class StudentServiceImpl implements StudentService{
 
     //adding dependency
@@ -17,6 +20,16 @@ public class StudentServiceImpl implements StudentService{
     private StudentDAO studentDAO;
     private StudentDTOConverter converter;
 
+    @Autowired
+    public void setStudentDAO(StudentDAO studentDAO) {
+        System.out.println("Calling setStudentDAO()");
+        this.studentDAO = studentDAO;
+    }
+    @Autowired
+    public void setConverter(StudentDTOConverter converter) {
+        System.out.println("Calling setConverter()");
+        this.converter = converter;
+    }
 
     @Override
     public StudentDTO create(String firstname, String lastname, LocalDate birthDate, String email) {

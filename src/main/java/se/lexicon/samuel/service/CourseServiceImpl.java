@@ -1,11 +1,13 @@
 package se.lexicon.samuel.service;
 
+import org.springframework.stereotype.Service;
 import se.lexicon.samuel.dto.CourseDTO;
 import se.lexicon.samuel.dto.StudentDTO;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService{
 
     //this process is called stubbing
